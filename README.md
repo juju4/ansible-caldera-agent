@@ -58,4 +58,3 @@ http://docs.ansible.com/ansible/intro_windows.html
 ## License
 
 BSD 2-clause
-
