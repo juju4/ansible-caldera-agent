@@ -1,0 +1,33 @@
+---
+
+- name: Ensure Microsoft Visual C++ Redistributable for Visual Studio 2015 is present
+  win_chocolatey:
+    name: vcredist2015
+    state: present
+
+- name: Download Caldera agent and dependencies
+  win_get_url:
+    url: "{{ item.u }}"
+    dest: "{{ item.d }}"
+  with_items: "{{ calderaagent_urls }}"
+
+- include: firewall.yml
+- include: registry.yml
+
+- block:
+    - name: retrieve Caldera server config
+      win_get_url:
+        url: "{{ caldera_server_conf }}"
+        dest: 'C:\Program Files\cagent\conf.yml'
+
+    - name: Setup agent
+      win_shell: cagent.exe --startup auto install
+      args:
+        chdir: 'C:\Program Files\cagent'
+
+    - name: Start agent
+      win_shell: cagent.exe start
+      args:
+        chdir: 'C:\Program Files\cagent'
+
+  when: caldera_server_conf is defined and caldera_server_conf != ''

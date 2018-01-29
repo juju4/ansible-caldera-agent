@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become_method: runas
+  vars:
+    - a: true
+  roles:
+    - juju4.caldera-agent

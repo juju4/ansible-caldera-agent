@@ -1,0 +1,8 @@
+---
+# https://caldera.readthedocs.io/en/latest/environment_setup.html
+
+- name: adapt firewall rules for caldera
+  win_shell: "{{ item }}"
+  with_items:
+    - Enable-NetFirewallRule -DisplayName "'File and Printer Sharing (SMB-In)'"
+    - Enable-NetFirewallRule -DisplayName "'Remote Scheduled Tasks Management (RPC)'"
