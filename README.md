@@ -1,5 +1,8 @@
 [![Build Status - Master](https://travis-ci.org/juju4/ansible-caldera-agent.svg?branch=master)](https://travis-ci.org/juju4/ansible-caldera-agent)
 [![Build Status - Devel](https://travis-ci.org/juju4/ansible-caldera-agent.svg?branch=devel)](https://travis-ci.org/juju4/ansible-caldera-agent/branches)(Syntax Only)
+
+[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/awmoxtb8nwg0ss8r?svg=true)](https://ci.appveyor.com/project/juju4/ansible-caldera-agent)
+![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/awmoxtb8nwg0ss8r/branch/devel?svg=true)
 # Windows MITRE Caldera agent
 
 Ansible role to setup MITRE Caldera agent on windows

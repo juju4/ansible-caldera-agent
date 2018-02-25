@@ -4,6 +4,7 @@
   win_chocolatey:
     name: vcredist2015
     state: present
+  ignore_errors: true
 
 - name: Download Caldera agent and dependencies
   win_get_url:
