@@ -6,6 +6,11 @@
     state: present
   ignore_errors: true
 
+- name: Ensure caldera agent directory exists
+  win_file:
+    path: 'C:\Program Files\cagent'
+    state: directory
+
 - name: Download Caldera agent and dependencies
   win_get_url:
     url: "{{ item.u }}"
