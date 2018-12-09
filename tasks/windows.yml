@@ -36,4 +36,4 @@
       args:
         chdir: 'C:\Program Files\cagent'
 
-  when: caldera_server_conf is defined and caldera_server_conf != ''
+  when: caldera_server_conf is defined and caldera_server_conf
